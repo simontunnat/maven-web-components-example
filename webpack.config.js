@@ -1,16 +1,18 @@
 const path = require('path');
+const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  context: path.resolve(__dirname, 'src/main/frontend'),
-  entry: './js/index.js',
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
+  entry: {
+    main: glob.sync('./src/main/frontend/js/*/*.js')
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'index.html'
+      template: './src/main/frontend/index.html'
     })
-  ]
+  ],
+  output: {
+    filename: '[name].[contenthash].js',
+    path: path.resolve(__dirname, 'dist')
+  }
 };
