@@ -1,13 +1,18 @@
 class MyParagraph extends HTMLElement {
   constructor() {
     super();
-
     this.attachShadow({mode: 'open'});
+    this.render();
+  }
 
-    const template = document.getElementById('my-paragraph');
-    const templateClone = template.content.cloneNode(true);
+  get text() {
+    return this.getAttribute("text");
+  }
 
-    this.shadowRoot.appendChild(templateClone);
+  render() {
+    this.shadowRoot.innerHTML = `
+    <p>${this.text}</p>
+    `;
   }
 }
 
