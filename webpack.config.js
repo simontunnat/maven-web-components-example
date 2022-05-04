@@ -4,13 +4,27 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: glob.sync('./src/main/frontend/js/*/*.js')
+    main: glob.sync('./src/main/frontend/js/*/*.ts')
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/main/frontend/index.html'
     })
   ],
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-typescript']
+          }
+        }
+      }
+    ]
+  },
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
