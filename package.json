@@ -1,0 +1,22 @@
+{
+  "name": "maven-nodejs-integration-example",
+  "version": "1.0.0-SNAPSHOT",
+  "description": "Maven Node.js Integration Example",
+  "repository": "https://github.com/simontunnat/maven-nodejs-integration-example",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production"
+  },
+  "keywords": [],
+  "author": "Simon Tunnat",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "html-webpack-plugin": "^4.5.2",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
