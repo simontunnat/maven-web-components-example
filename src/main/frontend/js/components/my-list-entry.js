@@ -1,4 +1,4 @@
-class MyParagraph extends HTMLElement {
+class MyListEntry extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({mode: 'open'});
@@ -11,9 +11,9 @@ class MyParagraph extends HTMLElement {
 
   render() {
     this.shadowRoot.innerHTML = `
-    <p>${this.text}</p>
+    <li>${this.text}</li>
     `;
   }
 }
 
-customElements.define('my-paragraph', MyParagraph);
+customElements.define('my-list-entry', MyListEntry);
