@@ -1,8 +1,8 @@
 {
-  "name": "maven-nodejs-integration-example",
+  "name": "maven-web-components-example",
   "version": "1.0.0-SNAPSHOT",
-  "description": "Maven Node.js Integration Example",
-  "repository": "https://github.com/simontunnat/maven-nodejs-integration-example",
+  "description": "Maven Web Components Example",
+  "repository": "https://github.com/simontunnat/maven-web-components-example",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
