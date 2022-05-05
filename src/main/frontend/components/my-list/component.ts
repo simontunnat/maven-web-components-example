@@ -1,4 +1,5 @@
-import "./main.scss";
+import "../../core/core.ts";
+import "./component.scss";
 
 class MyList extends HTMLElement {
   constructor() {

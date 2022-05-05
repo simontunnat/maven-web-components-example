@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
-    main: glob.sync('./src/main/frontend/components/*/*.ts')
+    main: glob.sync('./src/main/frontend/components/**/*.ts')
   },
   plugins: [
     new HtmlWebpackPlugin({
