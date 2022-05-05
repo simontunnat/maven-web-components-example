@@ -1,7 +1,8 @@
+import "./main.scss";
+
 class MyList extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({mode: 'open'});
     this.render();
   }
 
@@ -14,11 +15,11 @@ class MyList extends HTMLElement {
   }
 
   render() {
-    this.shadowRoot.innerHTML = `
-    <ul>
-    <my-list-entry text="${this.entry1}"></my-list-entry>
-    <my-list-entry text="${this.entry2}"></my-list-entry>
-    </ul>
+    this.innerHTML = `
+    <div class="my-list">
+      <my-paragraph text="${this.entry1}"></my-paragraph>
+      <my-paragraph text="${this.entry2}"></my-paragraph>
+    </div>
     `;
   }
 }

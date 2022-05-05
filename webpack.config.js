@@ -1,15 +1,17 @@
 const path = require('path');
 const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
-    main: glob.sync('./src/main/frontend/js/*/*.ts')
+    main: glob.sync('./src/main/frontend/components/*/*.ts')
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/main/frontend/index.html'
-    })
+    }),
+    new MiniCssExtractPlugin()
   ],
   module: {
     rules: [
@@ -28,11 +30,19 @@ module.exports = {
             ]
           }
         }
-      }
+      },
+      {
+        test: /\.scss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader"
+        ]
+      },
     ]
   },
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true
   }
